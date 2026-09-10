@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.xiaomiprinter'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.xiaomiprinter"
+        minSdk 24      // Android 7.0, supports Bluetooth 5.2 features
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    // Kotlin standard library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    // Activity and UI
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core-ktx:1.13.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+}
